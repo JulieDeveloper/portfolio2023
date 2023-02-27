@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { WindowSizeProvider } from 'context/WindowSizeContext';
+import './styles/reset.css';
+import './styles/base.css';
+import './styles/color.scss';
+
+// import { HomePage, AboutPage, ProjectsPage } from './pages/index';
+import { HomePage, AboutPage, ProjectsPage, ContactPage } from 'pages';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <WindowSizeProvider>
+          <Routes>
+            <Route path="about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            {/* <Route path="/projectId" element={<ProjectPage />} /> */}
+            {/* </Route> */}
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </WindowSizeProvider>
+      </BrowserRouter>
     </div>
   );
 }
