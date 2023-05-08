@@ -1,13 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('../assets/fonts/monument-grotesk/stylesheet.css');
+@import url('../assets/fonts/PPMonumentExtended/stylesheet.css');
+@import url('../assets/fonts/PPMori/stylesheet.css');
+@import url('../assets//fonts//TaipeiSansTC/stylesheet.css');
 @import 'color.scss';
 
+:root {
+  font-size: 14px;
+  font-weight: 400;
+  --page-paddingX: 10vw;
+  --page-marginX: 2vw;
+  --page-content-width: calc(100vw - (var(--page-marginX) * 2));
+  --footer-height: 40px;
+  --header-height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 14px;
+    --page-paddingX: 10vw;
+
+    --footer-height: 47px;
+    --header-height: 45px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --page-paddingX: 20vw;
+    --page-content-width: calc(100vw - (var(--page-marginX) * 2));
+    --footer-height: 67px;
+    --header-height: 50px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 html,
 body {
-  /* font-family: 'Noto Serif TC', serif, 'Noto Sans', sans-serif; */
-  font-family: 'Noto Sans', sans-serif;
-  background-color: var(--light);
-  color: var(--dark);
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  font-family: 'Mori', 'PPMonumentExtended', 'Monument Grotesk', 'Rubik',
+    sans-serif;
+
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  font-size: 1em;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: normal;
+}
+h2,
+h3 {
+  font-size: 1.5em;
+  line-height: normal;
+}
+
+.TC {
+  font-family: 'Taipei Sans TC', 'Noto Serif TC', serif, 'Noto Sans', sans-serif;
+  font-weight: 400;
+}
+.TC p,
+.TC div {
+  line-height: 120%;
+}
+.EN {
+  font-family: 'Mori', 'PPMonumentExtended', 'Monument Grotesk', 'Rubik';
+}
+.Menlo {
+  font-family: 'Menlo';
 }

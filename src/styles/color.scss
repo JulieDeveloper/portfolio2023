@@ -1,12 +1,326 @@
 :root {
-  --dark: #333333;
-  --dark-shadow: #33333333;
-  --grey800: #808080;
-  --grey600: #999999;
-  --grey400: #d9d9d9;
-  --grey200: #bababa33;
-  --light: #f1f1ea;
   --white: #ffffff;
-  --pink: #e2c9c9;
+  --cream: #eeeeee;
+  --grey: #bfbfbf;
+  --dark-grey: #808080;
+  --dark: #404040;
+  --black: #222222;
+  --orange: #b35417;
+  --blue: #2a4fcf;
   --red: #d07777;
+}
+
+[data-theme='light'],
+:root {
+  --primary-text: var(--black);
+  --sub-text: var(--white);
+  --primary-bg: var(--white);
+  --sub-bg: var(--cream);
+
+  /* Background--------------------------start*/
+  /* Header---*/
+  --hamburger-icon: var(--dark);
+  --menu-bg: var(--dark-grey);
+
+  /* Nav Item---*/
+  --navItem_line-desktop: var(--primary-text);
+  --navItem_text-desktop: var(--primary-text);
+  --navItem_text-mobile: var(--sub-text);
+  --navItem_text-mobile--hover: var(--primary-text);
+  --navItem_home-sub-text: var(--grey);
+
+  /* social links---*/
+  --socialIcon-mobile: var(--sub-text);
+  --socialIcon-mobile--hover: var(--primary-text);
+  --socialIcon-laptop: var(--grey);
+  --socialIcon-laptop--hover: var(--black);
+  /* Themes---*/
+  --theme: var(--black);
+  --theme--hover: var(--grey);
+
+  /* Home Page--------------------------start*/
+
+  --home_landing-text: var(--white);
+  --home_landing-bg-outline: #22222245;
+  --home_landing-bg-inline: #222222ce;
+  --home_landing-cursor-inline: #222222;
+  --home_landing-cursor-outline: #22222245;
+
+  /* About Page--------------------------start*/
+
+  --about_arrow-icon: var(--primary-text);
+
+  --about_as-title: var(--cream);
+  --about_as-dev-bg: var(--black);
+  --about_as-dev-line: var(--grey);
+  --about_as-dev-content: var(--cream);
+
+  --about_as-des-bg: var(--grey);
+  --about_as-des-left-line: var(--cream);
+  --about_as-des-right-line: var(--black);
+  --about_as-des-content: var(--dark);
+  --about_project-bg: var(--grey);
+  --about_project-line: var(--primary-text);
+  --about_project-main-box-border: var(--primary-text);
+  --about_project-sub-box-bg: var(--cream);
+
+  --about_core-fun-to-work-with: var(--orange);
+  --about_skills-type: var(--grey);
+  --about_job-row-icon: var(--primary-text);
+
+  /* Projects Page--------------------------start*/
+  --project_border: var(--grey);
+  --project_num: var(--grey);
+  --project_x-btn: var(--black);
+  --project_techstack-border: var(--black);
+  --project_techstack-text: var(--primary-text);
+  --project_techstack-bg: transparent;
+  --project-hover-bg: var(--cream);
+  --project_selected-text: var(--primary-text);
+  --project_selected-collapse-text: var(--primary-text);
+  --project_selected-bg: var(--cream);
+  --project_selected-border: var(--black);
+  --project_low-hover-text: var(--primary-text);
+  --project_low-hover-bg: #ffffffa1;
+  --project_low-hover-num: var(--black);
+  --project_low-hover-border: var(--black);
+  --project_comingSoon-btn-bg--hover: var(--black);
+  --project_comingSoon-btn-text--hover: var(--white);
+  --project_comingSoon-btn-bg--hover: var(--white);
+  --project_comingSoon-btn-text--hover: var(--black);
+
+  /* Contact Page--------------------------start*/
+
+  /* Form---*/
+  --form_input-text: var(--primary-text);
+  --form_input-border: var(--grey);
+  --form_input--focus: var(--primary-text);
+  --form_input-autofill-border: var(--primary-text);
+  --form_input-autofill-text: var(--primary-text);
+  --form_input-autofill-bg: var(--cream);
+  --form_input-icon: var(--dark-grey);
+
+  --form_label--valid: var(--primary-text);
+  --form_error: var(--red);
+
+  --form_btn-send-text: var(--cream);
+  --form_btn-send-bg: var(--dark);
+  --form_btn-reset-text: var(--dark-grey);
+  --form_btn-reset-border: var(--dark-grey);
+  --form_btn--hover: var(--dark-grey);
+
+  /* Project - Portfolio2023---------start*/
+  --01-primary-bg: var(--white);
+  --01-primary-text: var(--black);
+  --01-sub-text: var(--dark-grey);
+
+  --01-landing_role-and-url: var(--cream);
+  --01-landing_role-and-url-bg: var(--black);
+  --01-landing_num: var(--grey);
+  --01-overview_text0-bg: var(--dark);
+  --01-overview_text0: var(--cream);
+
+  --01-tech_bg: var(--black);
+  --01-tech_links-bg: var(--01-tech_bg);
+  --01-tech_links-border: var(--cream);
+  --01-tech_link: var(--white);
+  --01-tech_link-border-bottom: var(--blue);
+  --01-tech_tree-type: var(--grey);
+  --01-tech_tree-line: var(--cream);
+  --01-tech_tree-text: var(--cream);
+
+  --01-feature-detail-section-bg: var(--01-primary-bg);
+  --01-rwd_nav-active: var(--dark-grey);
+  --01-darkmode_grid-text: var(--dark-grey);
+  --01-darkmode_icon: var(--01-control-panel_bg);
+  --01-darkmode_icon-stroke: var(--dark);
+  --01-darkmode_icon-active: var(--black);
+
+  --01-darkmode-animation_line: var(--dark-grey);
+  --01-darkmode-animation_circle-border: var(--dark);
+  --01-darkmode-animation_main-circle-bg: var(--dark);
+  --01-darkmode-animation_sub-circle-bg: var(--cream);
+
+  --01-control-panel_bg: #f1f1ea;
+  --01-control-panel_border: var(--dark-grey);
+  --01-control-panel_box-shadow: #2222223f;
+  --01-control-panel_icon-shadow: #33333333;
+  --01-bilingual_demo-box-bg: var(--dark);
+  --01-bilingual_demo-box-border: transparent; /*change*/
+  --01-bilingual_demo-box-text: #f1f1ea;
+  --01-less-is-more_line: var(--blue);
+  --01-less-is-more_less: var(--dark);
+  --01-less-is-more_is-more: var(--grey);
+
+  --01-less-is-more_text-stroke: var(--black);
+  --01-less-is-more_text-shadow: var(--grey);
+  --01-color_card-variable: var(--white);
+  --01-color_card-variable-sub: var(--dark-grey);
+
+  --01-color_card-bottom-bg: var(--white);
+  --01-color_card-bottom-type: var(--dark);
+  --01-color_card-bottom-code: var(--01-primary-text);
+  --01-color_cards-shadow: #33333333;
+  --01-color_cards-Aa: var(--cream);
+  --01-color_cards-Aa-sub: var(--dark-grey);
+
+  --01-font_border: var(--dark);
+  --01-font_shadow25: #22222266;
+  --01-font_shadow50: #22222219;
+  --01-font_shadow75: #22222266;
+}
+
+[data-theme='dark'] {
+  --primary-text: var(--cream);
+  --sub-text: var(--grey);
+  --primary-bg: var(--black);
+  --sub-bg: var(--dark);
+
+  /* Background--------------------------start*/
+  /* Header---*/
+  --hamburger-icon: var(--grey);
+  --menu-bg: var(--dark); /*change*/
+
+  /* Nav Item---*/
+  --navItem_line-desktop: var(--primary-text);
+  --navItem_text-desktop: var(--sub-text); /*change*/
+  --navItem_text-mobile: var(--sub-text);
+  --navItem_text-mobile--hover: var(--primary-text);
+  --navItem_home-sub-text: var(--dark); /*change*/
+
+  /* social links---*/
+  --socialIcon-mobile: var(--sub-text); /*change*/
+  --socialIcon-mobile--hover: var(--primary-text);
+  --socialIcon-laptop: var(--dark-grey); /*change*/
+  --socialIcon-laptop--hover: var(--primary-text); /*change*/
+  /* Themes---*/
+  --theme: var(--grey); /*change*/
+  --theme--hover: var(--cream); /*change*/
+
+  /* Home Page--------------------------start*/
+  --home_landing-text: var(--white);
+  --home_landing-bg-outline: #22222245;
+  --home_landing-bg-inline: #222222ce;
+  --home_landing-cursor-inline: #222222;
+  --home_landing-cursor-outline: #22222245;
+
+  /* About Page--------------------------start*/
+  --about_arrow-icon: var(--primary-text);
+
+  --about_as-title: var(--cream);
+  --about_as-dev-bg: var(--black);
+  --about_as-dev-line: var(--grey);
+  --about_as-dev-content: var(--cream);
+
+  --about_as-des-bg: var(--grey);
+  --about_as-des-left-line: var(--cream);
+  --about_as-des-right-line: var(--dark-grey); /*change*/
+  --about_as-des-content: var(--dark);
+  --about_project-bg: var(--black); /*change*/
+  --about_project-line: var(--dark-grey); /*change*/
+  --about_project-main-box-border: var(--primary-text);
+  --about_project-sub-box-bg: var(--dark-grey); /*change*/
+
+  --about_core-fun-to-work-with: var(--white);
+  --about_skills-type: var(--grey);
+  --about_job-row-icon: var(--primary-text);
+
+  /* Projects Page--------------------------start*/
+  --project_border: var(--grey);
+  --project_num: var(--grey);
+  --project_x-btn: var(--cream); /*change*/
+  --project_techstack-border: transparent; /*change*/
+  --project_techstack-text: var(--black); /*change*/
+  --project_techstack-bg: var(--grey); /*change*/
+  --project-hover-bg: var(--dark); /*change*/
+  --project_selected-text: var(--white); /*change*/
+  --project_selected-collapse-text: var(--black); /*change*/
+  --project_selected-bg: var(--dark-grey); /*change*/
+  --project_selected-border: var(--black);
+  --project_low-hover-text: var(--white);
+  --project_low-hover-bg: var(--dark); /*change*/
+  --project_low-hover-num: var(--cream); /*change*/
+  --project_low-hover-border: var(--grey); /*change*/
+
+  /* Contact Page--------------------------start*/
+
+  /* Form---*/
+  --form_input-text: var(--primary-text);
+  --form_input-border: var(--dark-grey); /*change*/
+  --form_input--focus: var(--primary-text);
+  --form_input-autofill-border: var(--primary-text);
+  --form_input-autofill-text: var(--primary-text);
+  --form_input-autofill-bg: var(--cream);
+  --form_input-icon: var(--grey); /*change*/
+
+  --form_label--valid: var(--primary-text);
+  --form_error: var(--red);
+
+  --form_btn-send-text: var(--cream);
+  --form_btn-send-bg: var(--dark); /*change*/
+  --form_btn-reset-text: var(--dark-grey);
+  --form_btn-reset-border: var(--dark-grey);
+  --form_btn--hover: var(--white); /*change*/
+
+  /* Project - Portfolio2023---------start*/
+  --01-primary-bg: var(--black); /*change*/
+  --01-primary-text: var(--white); /*change*/
+  --01-sub-text: var(--dark-grey);
+
+  --01-landing_role-and-url: var(--cream);
+  --01-landing_role-and-url-bg: var(--dark); /*change*/
+  --01-landing_num: var(--grey);
+  --01-overview_text0-bg: var(--dark);
+  --01-overview_text0: var(--cream);
+
+  --01-tech_bg: var(--black);
+  --01-tech_links-bg: var(--01-tech_bg);
+  --01-tech_links-border: var(--cream);
+  --01-tech_link: var(--white);
+  --01-tech_link-border-bottom: var(--blue);
+  --01-tech_tree-type: var(--grey);
+  --01-tech_tree-line: var(--cream);
+  --01-tech_tree-text: var(--cream);
+
+  --01-feature-detail-section-bg: var(--dark); /*change*/
+  --01-rwd_nav-active: var(--dark-grey);
+  --01-darkmode_grid-text: var(--grey); /*change*/
+  --01-darkmode_icon: var(--01-control-panel_bg);
+  --01-darkmode_icon-stroke: var(--white); /*change*/
+  --01-darkmode_icon-active: var(--white); /*change*/
+
+  --01-darkmode-animation_line: var(--dark-grey);
+  --01-darkmode-animation_circle-border: var(--dark);
+  --01-darkmode-animation_main-circle-bg: var(--dark-grey); /*change*/
+  --01-darkmode-animation_sub-circle-bg: var(--white); /*change*/
+
+  --01-control-panel_bg: var(--black); /*change*/
+  --01-control-panel_border: var(--black); /*change*/
+  --01-control-panel_box-shadow: var(--white); /*change*/
+  --01-control-panel_icon-shadow: #33333333;
+
+  --01-bilingual_demo-box-bg: var(--dark-grey); /*change*/
+  --01-bilingual_demo-box-border: var(--black); /*change*/
+  --01-bilingual_demo-box-text: #f1f1ea;
+  --01-less-is-more_line: var(--blue);
+  --01-less-is-more_less: var(--dark);
+  --01-less-is-more_is-more: var(--black); /*change*/
+
+  --01-less-is-more_text-stroke: var(--white); /*change*/
+  --01-less-is-more_text-shadow: var(--dark); /*change*/
+  --01-color_card-variable: var(--white);
+  --01-color_card-variable-sub: var(--dark-grey);
+
+  --01-color_card-bottom-bg: var(--white);
+  --01-color_card-bottom-type: var(--dark);
+  --01-color_card-bottom-code: var(--black); /*change*/
+
+  --01-color_cards-shadow: #33333333;
+  --01-color_cards-Aa: var(--cream);
+  --01-color_cards-Aa-sub: var(--dark-grey);
+
+  --01-font_border: var(--dark);
+  --01-font_shadow25: #ffffff;
+  --01-font_shadow50: #ffffff66;
+  --01-font_shadow75: #ffffff;
 }

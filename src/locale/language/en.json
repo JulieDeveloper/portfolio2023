@@ -1,0 +1,107 @@
+{
+  "background": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "theme": {
+      "language": "TC"
+    },
+    "links": {
+      "resume": "RESUME"
+    },
+    "position": "Web\nDeveloper"
+  },
+  "homePage": {
+    "brief": "I design and develop modern, creative websites.",
+    "expertise": "Expertise in\nFrontend Development",
+    "whatIDo": "With a passion for bringing unique brand visions to life, I create visually stunning and user-friendly web experiences that exceed client expectations."
+  },
+  "aboutPage": {
+    "greeting": "Nice To Meet You.",
+    "intro": {
+      "line1": "<0>Hey, I'm  </0><1>Julie Chou</1>, \n\na Web Developer who loves working on projects from start to finish, including user research, design, and coding.",
+      "line2": "I'm from <1>Taiwan</1> and passionate about exploring new cultures. With travel experience from around the world, I bring a global perspective and deep appreciation for diversity to my work as a web developer.",
+
+      "line3": "I recently moved to <1>Brantford, Ontario </1> and I'm looking forward to continuing my journey in web development.",
+      "line4": "I'm currently looking for opportunities to collaborate with creative individuals and organizations to enhance my abilities, and build innovative digital solutions that make a positive impact on the world."
+    },
+    "developer": {
+      "line1": "With a keen eye for detail, I ensure that every project is polished and professional. I am also a flexible learner who can quickly adapt to new technologies and requirements, enabling me to meet the unique demands of any project.",
+      "line2": "I specialize in creating high-quality, user-friendly websites using Frontend language and frameworks ",
+
+      "line3": "I am interested in creating cool animations, and I am also eager to explore CMS platforms to unlock new possibilities for creativity."
+    },
+    "designer": {
+      "line1": "With a background in Applied Art, I prioritize creating content structures that are easy to understand, using clean and thoughtful design patterns, and interactions that cater to the user's needs. I always strive to integrate the client's ideas and the website's main purpose into my designs."
+    },
+
+    "projects": {
+      "title": "Explore My Latest Work",
+      "info": "If you have any questions or opportunities for collaboration, please don't hesitate to reach out to me.",
+      "link": "Projects"
+    },
+
+    "core": {
+      "title": "CORE COMPETENCIES",
+      "list1": "Focus on Detail",
+      "detail1": "Being meticulous and precise, paying attention to small details that impact the quality of work.",
+      "list2": "Creativity",
+      "detail2": "Generating new and innovative ideas and approaches to problem-solving.",
+      "list3": "User-focused design",
+      "detail3": "Creating products or services that are easy to use and provide a positive experience for the user.",
+      "list4": "Passion for learning",
+      "detail4": "Having a strong desire to learn new things and grow your knowledge and skills.",
+      "list5": "Persistent and problem-solving",
+      "detail5": "Being resilient and creative in finding solutions to challenges.",
+      "list6": "Adaptability",
+      "detail6": "Quickly learning and adapting to new technologies and tools.",
+      "list7": "Good time-management and organization",
+      "detail7": "Being efficient and productive, able to prioritize tasks and meet deadlines.",
+      "list8": "Collaborative",
+      "detail8": "Working effectively in a team environment and communicating ideas clearly",
+      "funToWorkWith": "Oh, and by the way,\nI'm also super fun to work with!"
+    },
+
+    "skills": {
+      "title": "ABILITIES",
+      "tech": "Programming Expertise",
+      "design": "UI/UX Tools",
+      "language": "Language",
+      "eng": "English",
+      "tc": "Mandarin/Traditional Chinese"
+    },
+    "job": {
+      "info": "Looking for any type of work.\nOpen to individual or company job opportunities where I can contribute my skills, learn new things, and continue to grow both personally and professionally.",
+      "location": "Brantford Ontario",
+      "eligible": "Eligible to work in Canada",
+      "resumeLink": "Resume",
+      "contactLink": "Contact"
+    }
+  },
+  "contactPage": {
+    "emailMe": "Reach me out at ",
+    "dropMessage": "Or drop me a line",
+    "contactForm": {
+      "name": {
+        "label": "Name",
+        "placeholder": "name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "message"
+      },
+
+      "sendBtn": "Send Message",
+      "hello": "Hello ",
+      "thankMessage": "Thank you for getting in touch with me. I will get back to you shortly.",
+      "restartBtn": "OK!"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "en": {
+    "landing": {
+      "role": "role",
+      "roleContent": "Web Design, Web Development",
+      "url": "url"
+    },
+    "briefDesign": "This portfolio website is designed with a clean and minimalist aesthetic in mind, using a black and white color scheme.",
+    "briefSummary": {
+      "line1": "The site is built using responsive web design (RWD) and mobile-first principles, ensuring that it looks great on all devices. It also includes features such as a dark mode and is available in two languages, Mandarin and English.",
+      "line2": "The website consists of several pages, including home, about, projects, individual project pages to showcase work, and contact.",
+      "line3": "Custom-built components and suitable libraries were utilized throughout the development process to create a seamless user experience. All interactive animations on the website are created using styled components and JavaScript."
+    },
+    "techTree": {
+      "design": "DESIGN",
+      "techStack": "TECH STACK",
+      "designTool": "Tool",
+      "techLanguage": "Language",
+      "techFramework": "Framework",
+      "techLibrary": "Libraries & Tools"
+    },
+    "techLinks": {
+      "code": "CODE",
+      "liveDemo": "LIVE DEMO"
+    },
+    "titleFeature": "FEATURES",
+    "rwd": {
+      "title": "RESPONSIVE WEB DESIGN",
+      "line1": "The website is designed to adapt and display properly on different screen sizes and devices.",
+      "line2": "The layout, text size, content, images, and navigation tools will adjust automatically to fit the user's screen, whether they are using a desktop computer, laptop, tablet, or smartphone.",
+      "navHome": "HOME",
+      "navAbout": "ABOUT",
+      "navProjects": "PROJECTS",
+      "navContact": "CONTACT"
+    },
+    "darkmode": {
+      "title": "DARK MODE",
+      "line0": "With the project, users can choose between two color themes, Light and Dark.",
+      "grid": {
+        "line1": "This feature enables users to change the color scheme of the entire site according to their preference.",
+        "line2": "Users can switch between these themes effortlessly by clicking on the icon button found in the bottom right section of each page."
+      }
+    },
+    "bilingual": {
+      "title": "BILINGUAL",
+      "line0": "The project offers two language options,\nEnglish and Mandarin.",
+      "controlBtn": {
+        "en": "EN",
+        "tc": "TC"
+      },
+      "line1I18n": "Implementing i18n",
+      "line1": "Enhance the user experience and make the application more accessible and user-friendly for people from diverse countries and cultures.",
+      "line2": "Users can easily select their preferred language by clicking on the corresponding option in the control panel, which improves user accessibility."
+    },
+    "design": {
+      "line1": "The design of this site is simple and straightforward, providing easy access to all the information about me.",
+      "line2": "This site utilizes large typography and a basic background to create dynamic contrast. Despite having a simple design, it is intuitive and easy to use.",
+      "fontAndColor": "FONT & COLOR",
+      "pickYourColor": "PICK\nYOUR\nCOLOUR",
+      "fontPP": "used for the English mode of the website",
+      "fontMenlo": "used for technical keywords.",
+      "fontTaipei": "used for the Mandarin Chinese mode of the website."
+    }
+  },
+
+  "tc": {
+    "landing": {
+      "role": "角色",
+      "roleContent": "網頁設計、網頁開發",
+      "url": "網址"
+    },
+    "briefDesign": "採用乾淨簡約的美學設計，使用黑白色調。",
+    "briefSummary": {
+      "line1": "網站採用響應式網頁設計 (RWD) 和行動優先原則，確保在各種裝置上均能呈現出最佳的效果。此外，網站還包括黑暗模式，並提供中文和英文兩種語言選擇。",
+      "line2": "網站由多個頁面組成，包括首頁、關於我、作品總覽、各作品介紹和聯繫方式。",
+      "line3": "開發過程中依需求客製開發元件及採用合適的套件，以創建完整的用戶體驗。網站上的特色動畫都是使用 CSS 和 JavaScript 創建的。"
+    },
+    "techTree": {
+      "design": "設計",
+      "techStack": "前端技術",
+      "designTool": "工具",
+      "techLanguage": "程式語言",
+      "techFramework": "框架",
+      "techLibrary": "套件"
+    },
+    "techLinks": {
+      "code": "程式碼",
+      "liveDemo": "成品網址"
+    },
+    "titleFeature": "特色功能",
+    "rwd": {
+      "title": "響應式網頁設計",
+      "line1": "網站設計能夠適應不同的屏幕尺寸和裝置",
+      "line2": "版面設計、文字大小、內容、圖像等皆根據用戶的屏幕自動調整排版及大小，無論用戶是使用桌面電腦、筆記本電腦、平板電腦還是智能手機。",
+      "navHome": "首頁",
+      "navAbout": "關於我",
+      "navProjects": "作品集",
+      "navContact": "聯繫方式"
+    },
+    "darkmode": {
+      "title": "深夜模式功能",
+      "line0": "使用者可以選擇兩種色彩主題，亮色和暗色。",
+      "grid": {
+        "line1": "此功能讓使用者根據自己的喜好更改整個網站的色彩主題。",
+        "line2": "透過點擊頁面右下方的圖標按鈕，輕鬆切換這些主題"
+      }
+    },
+    "bilingual": {
+      "title": "雙語功能",
+      "line0": "這個項目提供兩種語言選擇，英語和繁體中文。",
+      "controlBtn": {
+        "en": "英文",
+        "tc": "中文"
+      },
+      "line1I18n": "採用i18n套件",
+      "line1": "增強用戶體驗，使網頁能適應不同國家和文化的使用者。",
+      "line2": "使用者可以通過點擊控制面板上對應的選項輕鬆選擇他們偏好的語言，使網頁更具人性化。"
+    },
+    "design": {
+      "line1": "這個網站的設計簡單明瞭，讓使用者操作上可以快速熟悉頁面佈局，並找到所需資訊。",
+      "line2": "使用俐落的字體和背景配色，配上流線型的動畫效果創造動態對比。",
+      "fontAndColor": "字體和配色",
+      "pickYourColor": "選擇\n你的\n顏色",
+      "fontPP": "用於英語模式",
+      "fontMenlo": "用於技術關鍵字",
+      "fontTaipei": "台北黑體\n用於中文模式"
+    }
+  }
+}

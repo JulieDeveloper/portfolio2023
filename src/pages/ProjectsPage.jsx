@@ -1,195 +1,416 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
-import Background from 'components/background/Background';
 import styled from 'styled-components';
 import clsx from 'clsx';
 import { device } from 'styles/device';
-import '../styles/color.scss';
-import { useState } from 'react';
-import { ArrowRightIcon } from '../assets/images';
+import Header from 'components/background/Header';
+import Background from 'components/background';
+import Themes from 'components/background/Themes';
+import { ArrowRightIcon } from '../assets/images/icons';
+import ProjectsData from '../data/ProjectsData';
 
-const Container = styled.div`
-  .line {
-    display: none;
+const Style = styled.div`
+  .container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
   }
-  .items-wrapper {
-    width: 100%;
-  }
 
-  @media ${device.tablet} {
-    display: flex;
+  .hero-title-wrapper {
+    position: absolute;
+    top: 70vh;
     width: 100%;
+    height: fit-content;
+    padding-top: 1rem;
 
-    .line {
-      display: block;
-      margin-right: 10vw;
-      height: 150px;
-      width: 1px;
-      background-color: var(--grey600);
+    transform-origin: center bottom;
+    transform: ${({ scrolled }) =>
+      scrolled
+        ? `scale(${scrolled}) translateY(${scrolled}px)`
+        : 'scale(1) translateY(0)'};
+
+    text-align: center;
+    @media ${device.tablet} {
+      transform: ${({ scrolled }) =>
+        scrolled
+          ? `scale(${scrolled}) translateY(${scrolled}px)`
+          : 'scale(3) translateY(0)'};
     }
+
+    &.hidden {
+      opacity: 0;
+      transition: transform 0.5s ease-in;
+    }
+
+    .hero-title {
+      font-weight: 600;
+      line-height: 80%;
+
+      &:first-child {
+        font-size: 4rem;
+        transform: skew(-5deg);
+        transform-origin: bottom;
+        transition: font-size 0.5s ease;
+
+        span {
+          display: inline-block;
+          transform: skew(-15deg);
+          font-weight: inherit;
+        }
+      }
+
+      &:last-child {
+        font-size: 5rem;
+        transition: font-size 0.5s ease;
+
+        transform: skew(-15deg);
+        transform-origin: top;
+        span {
+          display: inline-block;
+          transform: skew(15deg);
+          transform-origin: top;
+
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+  .list-wrapper {
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    width: 100vw;
+    height: fit-content;
+    padding-bottom: var(--footer-height);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .copyright-wrapper {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
   }
 `;
-
-const projectsData = [
-  {
-    id: 1,
-    type: 'Personal Website',
-    name: 'Portfolio 2023',
-    role: 'Design / Development ',
-    brief:
-      'Clean and concise. Consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.',
-    techStack: 'HTML, SCSS, React',
-    path: '/projects/portfolio2023',
-  },
-  {
-    id: 2,
-    type: 'E-commerce Website',
-    name: 'GATE 6 CAFE',
-    role: 'Design / Development',
-    brief:
-      'Clean and concise. Consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.',
-    techStack: 'HTML, SCSS, React',
-    path: '/projects/Gate6-cafe',
-  },
-  {
-    id: 3,
-    type: 'Catering Cloud POS',
-    name: 'POINT',
-    role: 'Design / Development ',
-    brief:
-      'Clean and concise. Consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.',
-    techStack: 'HTML, SCSS, React',
-    path: '/projects/point',
-  },
-  {
-    id: 4,
-    type: 'Personal Website',
-    name: 'FUN-NI LEE',
-    role: 'Development ',
-    brief:
-      'Clean and concise. Consists of three sections – the homepage with his bio, a dedicated project page, and a contact page.',
-    techStack: 'HTML, SCSS, React',
-    path: '/projects/Fun-Ni-Lee',
-  },
-];
-
 const StyledProject = styled.div`
+  /* default */
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  padding: 5vh 2vw;
+
   display: flex;
-  font-size: 8px;
-  margin-bottom: 5vh;
-  width: 100%;
+  flex-direction: column;
+  border-bottom: 0.5px solid var(--project_border);
+
+  cursor: pointer;
+  @media ${device.tablet} {
+    padding: 5vh 5vw;
+    padding-right: 0;
+    flex-direction: row;
+    align-items: center;
+  }
 
   .num {
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;600&display=swap');
+    position: absolute;
 
-    font-family: 'Raleway', sans-serif;
+    top: 50%;
+    transform: translateY(-50%);
+
+    right: 1rem;
+    font-size: 10vw;
+    line-height: 10vw;
+
     font-weight: 100;
-    color: var(--grey800);
-    margin-right: 2vh;
-    height: 24px;
-    line-height: 24px;
-    vertical-align: baseline;
+    color: var(--project_num);
+    opacity: 50%;
+
+    &:hover {
+      opacity: 100%;
+    }
+    @media ${device.tablet} {
+      font-size: 8vw;
+      line-height: 8vw;
+    }
   }
 
-  .wrapper {
-    width: 100%;
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding-bottom: 4px;
-      border-bottom: 0.5px solid var(--grey600);
+  .name {
+    font-size: 8vw;
+    white-space: nowrap;
+    @media ${device.tablet} {
+      font-size: 5vw;
+    }
+  }
 
-      .type {
-        font-weight: 300;
-        color: var(--grey800);
+  .info-row {
+    @media ${device.tablet} {
+      margin-inline: 2rem;
+    }
+    .info-row-text .role {
+      font-weight: 100;
+    }
+    .control-collapse-btn {
+      visibility: hidden;
+      position: absolute;
+
+      right: 1rem;
+      bottom: 1rem;
+      height: 5vh;
+      width: 5vh;
+      cursor: pointer;
+      @media ${device.tablet} {
+        right: 15vw;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
-      .name {
-        font-weight: 400;
-        font-size: 1.5em;
-        color: var(--dark);
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        right: 50%;
+        height: 5vh;
+        width: 1px;
+        background-color: var(--project_x-btn);
+      }
+      &::after {
+        transform: rotate(90deg);
+        right: 50%;
+
+        transform-origin: center;
       }
     }
-    .role {
-      margin-top: 3px;
-      font-weight: 300;
-      color: var(--grey800);
-      opacity: 50%;
-      text-align: end;
+  }
+
+  /* default hover style */
+  &:hover:not(.is-select):not(.low-opacity),
+  &:active:not(.is-select):not(.low-opacity) {
+    background-color: var(--project-hover-bg);
+
+    .num {
+      opacity: 100%;
+    }
+    .name::first-letter {
+      font-style: italic;
+    }
+    .control-collapse-btn {
+      visibility: visible;
+    }
+  }
+
+  /* isSelect */
+  &.is-select {
+    width: 100%;
+    justify-content: center;
+    padding: 8vh 10vw;
+    padding-bottom: 5vh;
+    background-color: var(--project_selected-bg);
+    color: var(--project_selected-text);
+    transition: 0.6s ease-in;
+
+    cursor: default;
+    border-top: 1px solid var(--project_selected-border);
+    border-bottom: 1px solid var(--project_selected-border);
+
+    @media ${device.tablet} {
+      padding: 5vh 5vw;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .num {
+      visibility: hidden;
+      right: 0;
+      font-style: normal;
+      opacity: 1;
+
+      @media ${device.tablet} {
+        visibility: visible;
+        top: 5vh;
+        right: 1rem;
+        transform: translate(0);
+      }
+    }
+    .name {
+      font-style: italic;
+      transition: 0.6s ease-in;
+    }
+    .info-row {
+      margin-top: 1rem;
+      @media ${device.tablet} {
+        margin-top: 0;
+        margin-inline: 0;
+        flex-basis: 50%;
+      }
+    }
+
+    .control-collapse-btn {
+      visibility: visible;
+      top: 2vh;
+
+      &:hover,
+      &:active {
+        transform: rotate(180deg);
+        transform-origin: center;
+        transition: transform 0.5s ease-in;
+        @media ${device.tablet} {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
+      &::before,
+      &::after {
+        transform: rotate(45deg);
+        transition: all 0.5s ease-in;
+      }
+      &::after {
+        transform: rotate(135deg);
+      }
+      @media ${device.tablet} {
+        top: 8vh;
+        right: 20vw;
+      }
+      @media ${device.laptop} {
+        top: 4.5rem;
+        right: 15vw;
+      }
     }
     .collapse {
-      padding-left: 20%;
-      text-align: end;
-      font-weight: 300;
-
-      .techStack {
-        margin-top: 3vh;
-      }
-      .brief {
-        margin-top: 1vh;
-      }
-      svg {
-        margin-top: 3vh;
-        path {
-          fill: var(--dark);
-        }
-      }
-    }
-  }
-
-  &.active {
-    .num {
-      font-size: 1.5em;
-    }
-    .wrapper {
-      .row .type {
-        color: var(--dark);
-      }
-      .role {
-        opacity: 100%;
-        color: var(--dark);
-      }
-    }
-  }
-  @media ${device.tablet} {
-    font-size: 10px;
-  }
-
-  @media ${device.laptop} {
-    font-size: 1em;
-    .num {
-      height: 32px;
-      /* line-height: 32px */
+      margin-top: 5vh;
+      text-align: start;
       display: flex;
-      align-items: flex-end;
-    }
-    &.active {
-      .wrapper {
-        .row {
-          height: 32px;
+      flex-direction: column;
+      color: var(--project_selected-collapse-text);
 
-          all: unset;
-          display: flex;
-          justify-content: space-between;
+      .flex {
+        display: flex;
+        flex-direction: column;
 
-          .type {
-            width: 40%;
-            margin-top: auto;
-            padding-bottom: 4px;
-            border-bottom: 0.5px solid var(--grey600);
+        .text-wrapper {
+          font-size: 0.85em;
+
+          .techStack {
+            margin-top: 0.5rem;
+
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid var(--project_techstack-border);
+            color: var(--project_techstack-text);
+            background-color: var(--project_techstack-bg);
           }
-          .name {
-            font-size: 32px;
+          .brief {
+            @media ${device.tablet} {
+              width: 60%;
+            }
+            @media ${device.laptop} {
+              width: 40%;
+            }
           }
         }
-        .role {
-          text-align: start;
+        a {
+          display: inline-block;
         }
-        .collapse .techStack {
-          margin-top: 0;
+        .arrow-wrapper {
+          opacity: 0;
+          position: absolute;
+          right: 1rem;
+          bottom: 5vh;
+
+          @media ${device.tablet} {
+            right: 1rem;
+            bottom: calc(5vh + 100px);
+          }
+          @media ${device.laptop} {
+            right: 5vw;
+            bottom: 5vh;
+          }
+          svg path {
+            fill: var(--0grey);
+          }
         }
       }
+
+      .img-wrapper {
+        height: 40vw;
+        width: 100%;
+        margin: 2rem 0;
+
+        background-image: url(${(props) => props.imageUrl});
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media ${device.tablet} {
+          width: 55vw;
+          max-height: 200px;
+          opacity: 0.6;
+        }
+        @media ${device.laptop} {
+          margin: 0;
+          width: 30vw;
+          height: 200px;
+          position: absolute;
+          left: 45%;
+          bottom: 5vh;
+
+          z-index: 1;
+          background-position: bottom;
+        }
+      }
+    }
+    .link:hover,
+    .link:active {
+      .arrow-wrapper {
+        opacity: 1;
+        transform: scale(4);
+        transform-origin: right;
+
+        transition: opacity 0.6s ease-in;
+
+        @media ${device.tablet} {
+          transform: scale(5);
+        }
+        @media ${device.laptop} {
+          transform: scale(6);
+        }
+      }
+      .img-wrapper {
+        opacity: 1;
+      }
+    }
+  }
+  /* low-opacity */
+  /* when the items are not selected */
+  &.low-opacity {
+    opacity: 0.5;
+    .name {
+      font-size: 4vw;
+    }
+  }
+  &.low-opacity:hover,
+  &.low-opacity:active {
+    opacity: 0.8;
+    color: var(--project_low-hover-text);
+
+    background-color: var(--project_low-hover-bg);
+    border-bottom: 1px solid var(--project_low-hover-border);
+    .num {
+      color: var(--project_low-hover-num);
+      opacity: 50%;
+    }
+    .name {
+      font-size: 4.1vw;
+    }
+  }
+  @media ${device.laptop} {
+    .num {
+      right: 5vw !important;
     }
   }
 `;
@@ -201,86 +422,153 @@ const Project = ({
   role,
   brief,
   techStack,
+  imageUrl,
   path,
-  isShowed,
-  setIsShowed,
-  showedProject,
-  setShowedProject,
+  isSelect,
+  setIsSelect,
+  selectedId,
+  setSelectedId,
 }) => {
+  const projectRef = useRef(null);
+
   const handleClick = (e) => {
     e.stopPropagation();
-    setShowedProject(id);
-    setIsShowed(true);
+    if (!isSelect || selectedId !== id) {
+      setSelectedId(id);
+      setIsSelect(true);
+    }
+    projectRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  const handleCollapseBtnClick = () => {
+    if (!isSelect) {
+      setSelectedId(id);
+      setIsSelect(true);
+    } else if (isSelect) {
+      setIsSelect(false);
+      setSelectedId(null);
+    }
   };
 
-  const detail = isShowed && showedProject === id && (
-    <div className="collapse">
-      <div className="techStack">{techStack}</div>
-      <div className="brief">{brief}</div>
-      <Link to={path}>
-        <ArrowRightIcon />
+  const detail = isSelect && selectedId === id && (
+    <>
+      <Link to={path} className="link">
+        <div className="collapse">
+          <div className="flex">
+            <div className="text-wrapper">
+              <div className="brief">{brief}</div>
+              <div className="techStack">{techStack}</div>
+            </div>
+            <div className="arrow-wrapper">
+              <ArrowRightIcon />
+            </div>
+          </div>
+
+          <div className="img-wrapper"></div>
+        </div>
       </Link>
-    </div>
+    </>
   );
 
   const number = num.toString().length < 2 ? '0' + num : num;
 
   return (
     <StyledProject
-      className={clsx(isShowed && showedProject === id && 'active')}
+      ref={projectRef}
+      imageUrl={imageUrl}
+      className={clsx(
+        isSelect && selectedId === id && 'is-select',
+        isSelect && selectedId !== id && 'low-opacity',
+      )}
       onClick={(e) => handleClick(e)}
     >
       <div className="num">{number}</div>
-      <div className="wrapper">
-        <div className="row">
+
+      <h3 className="name">{name}</h3>
+      <div className="info-row">
+        <div className="info-row-text">
           <div className="type">{type}</div>
-          <div className="name">{name}</div>
+          <div className="role">{role}</div>
         </div>
-        <div className="role">{role}</div>
-        {detail}
+        <div
+          className="control-collapse-btn"
+          onClick={handleCollapseBtnClick}
+        ></div>
       </div>
+
+      {detail}
     </StyledProject>
   );
 };
 
 const ProjectsPage = () => {
-  const [showedProject, setShowedProject] = useState('');
-  const [isShowed, setIsShowed] = useState(false);
-  const handleOutsideClick = () => {
-    if (!isShowed) {
-      return;
+  const [selectedId, setSelectedId] = useState('');
+  const [isSelect, setIsSelect] = useState(false);
+  const [scrolled, setScrolled] = useState(0);
+  const [isListAtCenter, setIsListAtCenter] = useState(false);
+  const containerRef = useRef(null);
+  const heroWrapperRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    function handleScroll() {
+      setScrolled(container.scrollTop);
+
+      if (container.scrollTop >= container.clientHeight * 0.5) {
+        setIsListAtCenter(true);
+      } else {
+        setIsListAtCenter(false);
+      }
     }
-    setShowedProject('');
-    setIsShowed(false);
-  };
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div onClick={handleOutsideClick}>
+    <>
+      <Header />
       <Background>
-        <Container>
-          <div className="line"></div>
-          <div className="items-wrapper">
-            {projectsData.map((data, index) => (
-              <Project
-                key={data.id}
-                id={data.id}
-                num={index + 1}
-                type={data.type}
-                name={data.name}
-                role={data.role}
-                brief={data.brief}
-                techStack={data.techStack}
-                path={data.path}
-                isShowed={isShowed}
-                setIsShowed={setIsShowed}
-                showedProject={showedProject}
-                setShowedProject={setShowedProject}
-              />
-            ))}
+        <Style scrolled={scrolled * 0.03} isSelect={isSelect}>
+          <div className="container" ref={containerRef}>
+            <div
+              className={`hero-title-wrapper EN ${isListAtCenter && 'hidden'} `}
+              scrolled={scrolled}
+              ref={heroWrapperRef}
+            >
+              <h1 className="hero-title">
+                <span>R</span>ECENT
+              </h1>
+              <h1 className="hero-title">
+                <span>W</span>ORK
+              </h1>
+            </div>
+
+            <div className="list-wrapper">
+              {ProjectsData().map((data, index) => (
+                <Project
+                  key={data.id}
+                  id={data.id}
+                  num={index + 1}
+                  type={data.type}
+                  name={data.name}
+                  role={data.role}
+                  brief={data.brief}
+                  techStack={data.techStack}
+                  imageUrl={data.imageUrl}
+                  path={data.path}
+                  isSelect={isSelect}
+                  setIsSelect={setIsSelect}
+                  selectedId={selectedId}
+                  setSelectedId={setSelectedId}
+                />
+              ))}
+            </div>
           </div>
-        </Container>
+        </Style>
+
+        <Themes />
       </Background>
-    </div>
+    </>
   );
 };
 

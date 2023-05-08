@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'PPMonumentExtended';
+  src: url('PPMonumentExtended-Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMonumentExtended';
+  src: url('PPMonumentExtended-BlackItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PPMonumentExtended';
+  src: url('PPMonumentExtended-Light.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PPMonumentExtended';
+  src: url('PPMonumentExtended-LightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'PPMonumentExtended';
+  src: url('PPMonumentExtended-Regular.otf') format('opentype');
+  font-weight: 450;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPMonumentExtended';
+  src: url('PPMonumentExtended-RegularItalic.otf') format('opentype');
+  font-weight: 450;
+  font-style: italic;
+}

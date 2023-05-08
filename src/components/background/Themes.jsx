@@ -1,92 +1,133 @@
-import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import '../../styles/color.scss';
 import { device } from '../../styles/device.js';
+import { DarkThemeIcon, LightThemeIcon } from 'assets/images/icons';
 
-import { DarkThemeIcon, LightThemeIcon } from 'assets/images';
+import { useContext } from 'react';
+import ThemesContext from 'context/ThemesContext';
 
 const Wrapper = styled.div`
-  display: flex;
-  width: 25vw;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--dark);
+  position: fixed;
+  right: 0;
 
-  @media ${device.tablet} {
-    width: 4.5vw;
-    height: 12vh;
-    flex-direction: column;
+  z-index: 500;
+
+  width: fit-content;
+  height: var(--footer-height);
+
+  display: flex;
+  align-items: center;
+
+  color: var(--theme);
+
+  &.home {
+    top: var(--header-height);
+    height: fit-content;
+    padding-right: var(--page-marginX);
+    transform: translateY(-100%);
+
+    @media ${device.tablet} {
+      padding: 0 var(--page-marginX);
+    }
+    @media ${device.laptop} {
+      bottom: 0;
+      padding: 0;
+      padding-right: calc(1rem + var(--page-marginX));
+    }
+  }
+
+  &:not(.home) {
+    bottom: 0;
+    padding: 1.5rem 2rem;
+
+    @media ${device.laptop} {
+      padding: 0 var(--page-marginX);
+    }
   }
 `;
 
 const Line = styled.span`
-  height: 17px;
+  height: 1rem;
   width: 1px;
-  background-color: var(--dark);
-
-  @media ${device.tablet} {
-    height: 1px;
-    width: 17px;
-  }
+  background-color: var(--theme);
+  margin: 0 1rem;
 `;
 
-const Text = styled.span`
+const LanguageStyle = styled.span`
   font-weight: 100;
-  font-size: 14px;
+
   cursor: pointer;
   &.TC {
     font-family: 'Noto Sans TC';
   }
-
-  @media ${device.tablet} {
-    writing-mode: vertical-lr;
+  &:hover,
+  &:active {
+    color: var(--theme--hover);
   }
 `;
 
 const IconColor = styled.div`
-  color: var(--dark);
   cursor: pointer;
+  svg {
+    height: 1rem;
+    width: 1rem;
+
+    path {
+      stroke: var(--theme);
+    }
+  }
+
+  &:hover svg path,
+  &:active svg path {
+    stroke: var(--theme--hover);
+  }
 `;
 
-const DarkTheme = ({ theme, setTheme }) => {
+const DarkTheme = ({ themes, setThemes }) => {
   const handleDarkmode = () => {
-    const nextDarkmode = theme.darkmode === 'default' ? 'dark' : 'default';
-    setTheme({ ...theme, darkmode: nextDarkmode });
+    const nextDarkmode = !themes.isDark;
+    setThemes({ ...themes, isDark: nextDarkmode });
+    const body = document.querySelector('body');
+    body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
   };
   let icon;
-  if (theme.darkmode === 'default') {
-    icon = <DarkThemeIcon onClick={handleDarkmode} />;
-  } else {
+
+  if (themes.isDark) {
     icon = <LightThemeIcon onClick={handleDarkmode} />;
+  } else {
+    icon = <DarkThemeIcon onClick={handleDarkmode} />;
   }
 
   return <IconColor>{icon}</IconColor>;
 };
 
-const Language = ({ theme, setTheme }) => {
-  const content = theme.language === 'ENG' ? '中文' : 'ENG';
-  const style = content === '中文' ? 'TC' : '';
+const Language = ({ themes, setThemes }) => {
+  const { t, i18n } = useTranslation();
+  const style = t('background.theme.language') === '中文' ? 'TC' : '';
 
   const handleLanguage = () => {
-    const nextLanguage = theme.language === 'ENG' ? 'CH' : 'ENG';
-    setTheme({ ...theme, language: nextLanguage });
+    const nextLanguage = themes.language === 'en' ? 'tc' : 'en';
+    i18n.changeLanguage(nextLanguage);
+    setThemes({ ...themes, language: nextLanguage });
   };
 
   return (
-    <Text className={style} onClick={handleLanguage}>
-      {content}
-    </Text>
+    <LanguageStyle className={style} onClick={handleLanguage}>
+      {t('background.theme.language')}
+    </LanguageStyle>
   );
 };
 
 const Themes = () => {
-  const [theme, setTheme] = useState({ darkmode: 'default', language: 'ENG' });
+  const { pathname } = useLocation();
 
+  const { themes, setThemes } = useContext(ThemesContext);
   return (
-    <Wrapper>
-      <DarkTheme theme={theme} setTheme={setTheme} />
+    <Wrapper className={pathname === '/' && 'home'}>
+      <Language themes={themes} setThemes={setThemes} />
       <Line />
-      <Language theme={theme} setTheme={setTheme} />
+      <DarkTheme themes={themes} setThemes={setThemes} />
     </Wrapper>
   );
 };

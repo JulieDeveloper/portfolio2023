@@ -1,0 +1,31 @@
+{
+  "en": {
+    "1": {
+      "type": "Personal Website",
+      "name": "Portfolio 2023",
+      "role": "UI Design, FrontEnd Development",
+      "brief": "The website has a clean and modern design, with custom animations to make it visually engaging. It is available in multiple languages, and includes a dark mode option for improved user experience. the website is designed to showcase my skills and experience in an engaging and user-friendly way, while highlighting my professional achievements and providing potential clients or employers with a clear understanding of my expertise."
+    },
+    "2": {
+      "type": "Organization Website",
+      "name": "Atlantic Sewing Guild",
+      "role": "UI Design, Wordpress Development",
+      "brief": "The non-profit organization website is aimed at the elderly community and features a clean and easy-to-navigate layout. It comprises multiple pages that introduce the community, its history, the latest event, and information on how to join and participate in its activities. The website is built using WordPress, making it easy to maintain and update. Additionally, the design prioritizes accessibility, featuring large fonts and clear contrast for easy reading."
+    }
+  },
+
+  "tc": {
+    "1": {
+      "type": "個人網站",
+      "name": "作品集 2023",
+      "role": "UI設計, 前端開發",
+      "brief": "採用極簡設計風格，搭配客製化動畫，使得視覺效果更為引人入勝。網站提供雙語選擇、深夜模式切換、聯絡表單、使用者能在不同裝置上都有流暢的排版以及良好的使用者體驗，以提供完善的使用者體驗。網站旨在以易於使用的方式，展示我的技能和經驗，讓潛在客戶或雇主對我的專業知識有清晰的理解。"
+    },
+    "2": {
+      "type": "社區網站",
+      "name": "Atlantic Sewing Guild",
+      "role": "UI設計, Wordpress開發",
+      "brief": "這個社區網站的目標觀眾為年長者，設計風格簡潔且易於導覽。網站包含多個頁面，介紹社區的歷史、最新活動，以及如何加入社區參與其中的活動。網站採用WordPress建構，易於維護和更新。此外，網站設計強調易用性，字體較大且對比明顯，方便閱讀。"
+    }
+  }
+}
