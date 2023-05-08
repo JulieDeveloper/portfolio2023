@@ -169,10 +169,9 @@ In the future, I plan to improve this project by:
 
 ### Challenges Faced
 
-- Setting up i18n for internationalization.
-- Creating reusable components that could handle different data types.
-- Deciding on the layout and content for each page.
-- Implementing responsive design for different screen sizes.
-- Testing the right CSS and animation libraries for the project.
-- Setting up localization for the website.
-- Debugging issues with form submissions.
+- Configuring i18n for localization of the website.
+- Determining the appropriate layout and content for each page.
+- Developing reusable components capable of handling various data types.
+- Implementing responsive design to support multiple screen sizes.
+- Selecting and testing appropriate CSS and animation libraries.
+- Deploying the website to production.
