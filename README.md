@@ -153,9 +153,10 @@ src/
 
 In the future, I plan to improve this project by:
 
+- Adding a loading page to improve user experience.
 - Adding a blog section to share my thoughts and experiences as a frontend developer.
 - Implementing a search functionality to easily navigate through the projects.
-  Refactoring the project's structure, components, and styles code to make it more readable, clean, and reusable.
+- Refactoring the project's structure, components, and styles code to make it more readable, clean, and reusable.
 - Improving the website's responsive design functionality to ensure it works well on all devices.
 - Adding more animations using GSAP or three.js to make the website more interactive and engaging.
 - Adding backend functionality to make it easier to edit the content and add more dynamic features.
