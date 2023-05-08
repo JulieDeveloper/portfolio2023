@@ -1,70 +1,178 @@
-# Getting Started with Create React App
+# Julie Chou's Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[www.juliechou.com](www.juliechou.com)
 
-## Available Scripts
+This project is my personal website that showcases my skills and projects as a web frontend developer. The website is a static website built using **React.js**.
 
-In the project directory, you can run:
+It includes the following features:
 
-### `npm start`
+- **Multi-page navigation**  
+  users can easily navigate between the home, about, projects, and contact pages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dark mode**  
+  users can toggle between light and dark mode to suit their preferences.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Multi-language support**  
+  the website is available in English and Mandarin Chinese, and users can switch between languages using the language selector in the header.
 
-### `npm test`
+- **Contact form**  
+  users can send a message to the website owner using the contact form on the contact page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Feel free to reach out to me at contact@juliechou.com if you have any questions or feedback on this project. Thank you for visiting my portfolio website!
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Table of Contents
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Technologies Used](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#technologies-used)  
+ [Installation and Usage](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#Installation)  
+ [Deployment](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#deployment)  
+ [Project Summary](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#project-summary)  
+ [Project Structure](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#project-structure)  
+ [Future Improvements](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#future-improvements)  
+ [Challenges Faced](https://github.com/JulieDeveloper/portfolio2023/edit/main/README.md#challenges-faced)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project uses the following technologies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React**
+- **React Router**
+- **Sass**
+- **Styled Components**
+- **i18next**
+- **react-reveal**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation and Usage
 
-## Learn More
+To run this project, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository: `git clone https://github.com/JulieDeveloper/portfolio2023.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can view the website at http://localhost:3000.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Deployment:
 
-### Analyzing the Bundle Size
+The website is deployed through **Vercel** and has its own domain [www.juliechou.com](www.juliechou.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### Project Summary
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is a static website built with React.js to showcase my skills and projects as a web frontend developer. The website includes pages for home, about me, projects, individual pages for each project, and a contact page. The website has bilingual functionality built using i18n and includes animations built with my CSS and JS skills and react-reveal library. The contact form is built using Formspree library.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Project Structure
 
-### Deployment
+```
+src/
+  ├── App.js
+  ├── App.test.js
+  ├── index.js
+  ├── reportWebVitals.js
+  ├── setupTests.js
+  ├── assets/
+  │     ├── fonts/
+  │     ├── images/
+  │     │     ├── icons/
+  │     │     └── resume-JulieChou.pdf
+  │     │
+  │     └── projectsImage/
+  │           ├── 01/
+  │           └── 02/
+  │           └── projectsPage/
+  │
+  ├── components/
+  │     ├── background/
+  │     │     ├── CopyRight.jsx
+  │     │     ├── Navbar.jsx
+  │     │     ├── SideBars.jsx
+  │     │     ├── SocialLinks.jsx
+  │     │     ├── Themes.jsx
+  │     │     └── index.jsx
+  │     │
+  │     └── projectPage/
+  │           └── ProjectBackground.jsx
+  │
+  ├── context/
+  │     ├── ThemesContext.jsx
+  │     └── WindowSizeContext.jsx
+  │
+  ├── data/
+  │     └── ProjectsData.js
+  │
+  ├── locale/
+  │     └── language/
+  │           ├── en.json
+  │           ├── tc.json
+  │           ├── project01.json
+  │           └── projectsList.json
+  │
+  ├── pages/
+  │     ├── ProjectPage/
+  │     │     ├── portfolio2023/
+  │     │     │     ├── ColorCards.jsx
+  │     │     │     ├── DarkmodeAnimation.jsx
+  │     │     │     ├── LineAnimation.jsx
+  │     │     │     ├── colorList.js
+  │     │     │     └── index.jsx
+  │     │     │
+  │     │     └── atlanticSewingGuild/
+  │     │           └── index.js
+  │     │
+  │     ├── ContactPage/
+  │     │     ├── ContactForm.jsx
+  │     │     └── ContactPage.jsx
+  │     │
+  │     ├── AboutPage.jsx
+  │     ├── HomePage.jsx
+  │     ├── ProjectsPage.jsx
+  │     └── index.js
+  │
+  └── styles/
+        ├── base.css
+        ├── color.scss
+        ├── device.js
+        ├── layout.jsx
+        ├── marvel-devices.min.css
+        └── reset.css
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### Future Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the future, I plan to improve this project by:
+
+- Adding a blog section to share my thoughts and experiences as a frontend developer.
+- Implementing a search functionality to easily navigate through the projects.
+  Refactoring the project's structure, components, and styles code to make it more readable, clean, and reusable.
+- Improving the website's responsive design functionality to ensure it works well on all devices.
+- Adding more animations using GSAP or three.js to make the website more interactive and engaging.
+- Adding backend functionality to make it easier to edit the content and add more dynamic features.
+- Implementing accessibility features to make the website more inclusive.
+- Adding more projects to the portfolio.
+- Optimizing the images to improve website performance.
+- Implementing server-side rendering to improve the website's SEO.
+- Adding unit tests to the project components to ensure code quality.
+
+---
+
+### Challenges Faced
+
+- Setting up i18n for internationalization.
+- Creating reusable components that could handle different data types.
+- Deciding on the layout and content for each page.
+- Implementing responsive design for different screen sizes.
+- Testing the right CSS and animation libraries for the project.
+- Setting up localization for the website.
+- Debugging issues with form submissions.
