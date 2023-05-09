@@ -1367,7 +1367,7 @@ const Portfolio2023 = () => {
                   value: 'home',
                 })}
               >
-                {t('rwd.nasvHome')}
+                {t('rwd.navHome')}
               </div>
               <div
                 className={clsx(
