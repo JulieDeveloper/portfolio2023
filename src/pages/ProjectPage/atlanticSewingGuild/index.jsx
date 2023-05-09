@@ -4,9 +4,9 @@ import { device } from 'styles/device';
 
 const ComingSoon = styled.div`
   width: 90vw;
-  height: 100vh;
+  height: 100svh;
   margin: 0 auto;
-  margin-top: 50vh;
+  margin-top: 50svh;
   background-color: var(--primary-bg);
   color: var(--primary-text);
   .container {

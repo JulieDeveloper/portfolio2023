@@ -12,7 +12,7 @@ import ProjectsData from '../data/ProjectsData';
 const Style = styled.div`
   .container {
     position: relative;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -21,7 +21,7 @@ const Style = styled.div`
 
   .hero-title-wrapper {
     position: absolute;
-    top: 70vh;
+    top: 70svh;
     width: 100%;
     height: fit-content;
     padding-top: 1rem;
@@ -102,7 +102,7 @@ const StyledProject = styled.div`
   position: relative;
   width: 100vw;
   height: fit-content;
-  padding: 5vh 2vw;
+  padding: 5svh 2vw;
 
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@ const StyledProject = styled.div`
 
   cursor: pointer;
   @media ${device.tablet} {
-    padding: 5vh 5vw;
+    padding: 5svh 5vw;
     padding-right: 0;
     flex-direction: row;
     align-items: center;
@@ -160,8 +160,8 @@ const StyledProject = styled.div`
 
       right: 1rem;
       bottom: 1rem;
-      height: 5vh;
-      width: 5vh;
+      height: 5svh;
+      width: 5svh;
       cursor: pointer;
       @media ${device.tablet} {
         right: 15vw;
@@ -174,7 +174,7 @@ const StyledProject = styled.div`
         content: '';
         position: absolute;
         right: 50%;
-        height: 5vh;
+        height: 5svh;
         width: 1px;
         background-color: var(--project_x-btn);
       }
@@ -207,8 +207,8 @@ const StyledProject = styled.div`
   &.is-select {
     width: 100%;
     justify-content: center;
-    padding: 8vh 10vw;
-    padding-bottom: 5vh;
+    padding: 8svh 10vw;
+    padding-bottom: 5svh;
     background-color: var(--project_selected-bg);
     color: var(--project_selected-text);
     transition: 0.6s ease-in;
@@ -218,7 +218,7 @@ const StyledProject = styled.div`
     border-bottom: 1px solid var(--project_selected-border);
 
     @media ${device.tablet} {
-      padding: 5vh 5vw;
+      padding: 5svh 5vw;
       flex-direction: column;
       align-items: flex-start;
     }
@@ -231,7 +231,7 @@ const StyledProject = styled.div`
 
       @media ${device.tablet} {
         visibility: visible;
-        top: 5vh;
+        top: 5svh;
         right: 1rem;
         transform: translate(0);
       }
@@ -251,7 +251,7 @@ const StyledProject = styled.div`
 
     .control-collapse-btn {
       visibility: visible;
-      top: 2vh;
+      top: 2svh;
 
       &:hover,
       &:active {
@@ -272,7 +272,7 @@ const StyledProject = styled.div`
         transform: rotate(135deg);
       }
       @media ${device.tablet} {
-        top: 8vh;
+        top: 8svh;
         right: 20vw;
       }
       @media ${device.laptop} {
@@ -281,7 +281,7 @@ const StyledProject = styled.div`
       }
     }
     .collapse {
-      margin-top: 5vh;
+      margin-top: 5svh;
       text-align: start;
       display: flex;
       flex-direction: column;
@@ -320,15 +320,15 @@ const StyledProject = styled.div`
           opacity: 0;
           position: absolute;
           right: 1rem;
-          bottom: 5vh;
+          bottom: 5svh;
 
           @media ${device.tablet} {
             right: 1rem;
-            bottom: calc(5vh + 100px);
+            bottom: calc(5svh + 100px);
           }
           @media ${device.laptop} {
             right: 5vw;
-            bottom: 5vh;
+            bottom: 5svh;
           }
           svg path {
             fill: var(--0grey);
@@ -357,7 +357,7 @@ const StyledProject = styled.div`
           height: 200px;
           position: absolute;
           left: 45%;
-          bottom: 5vh;
+          bottom: 5svh;
 
           z-index: 1;
           background-position: bottom;

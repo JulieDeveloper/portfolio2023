@@ -5,7 +5,7 @@ import { device } from 'styles/device';
 
 const CardStyle = styled.div`
   position: absolute;
-  top: calc(8vh * ${(props) => props.index});
+  top: calc(8svh * ${(props) => props.index});
   left: 10%;
   display: flex;
   justify-content: space-between;

@@ -9,21 +9,21 @@ import Themes from 'components/background/Themes';
 
 const Style = styled.div`
   width: 100%;
-  height: 100vh;
-  padding: 20vh var(--page-paddingX);
+  height: 100svh;
+  padding: 20svh var(--page-paddingX);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media ${device.tablet} {
-    padding: 15vh var(--page-paddingX);
+    padding: 15svh var(--page-paddingX);
 
     flex-direction: row;
     align-items: center;
   }
   .scroll-snap-item {
     width: 100%;
-    height: 100vh;
+    height: 100svh;
   }
 
   .text-wrapper,
@@ -35,7 +35,7 @@ const Style = styled.div`
   }
 
   .message-wrapper {
-    margin-top: 10vh;
+    margin-top: 10svh;
     @media ${device.tablet} {
       flex-basis: 40%;
       margin-top: 10%;

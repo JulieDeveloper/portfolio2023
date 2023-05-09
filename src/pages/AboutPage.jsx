@@ -32,7 +32,7 @@ const Font = styled.span`
 
 const Style = styled.div`
   .page-container {
-    height: 100vh;
+    height: 100svh;
     scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -40,10 +40,10 @@ const Style = styled.div`
   }
 
   section {
-    height: 100vh;
+    height: 100svh;
     display: flex;
     scroll-snap-align: center;
-    padding: 15vh var(--page-paddingX);
+    padding: 15svh var(--page-paddingX);
   }
   .icon_arrow-right path {
     fill: var(--about_arrow-icon);
@@ -52,7 +52,7 @@ const Style = styled.div`
   section.intro {
     .container {
       height: 100%;
-      padding-right: 10vh;
+      padding-right: 10svh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -70,7 +70,7 @@ const Style = styled.div`
       @media ${device.tablet} {
         flex-basis: 40%;
 
-        min-height: 35vh;
+        min-height: 35svh;
         line-height: 80%;
       }
     }
@@ -85,7 +85,7 @@ const Style = styled.div`
 
         text-align: justify;
         flex-basis: 40%;
-        min-height: 35vh;
+        min-height: 35svh;
         align-self: end;
       }
     }
@@ -98,7 +98,7 @@ const Style = styled.div`
     .container {
       position: relative;
       width: 100vw;
-      min-height: 100vh;
+      min-height: 100svh;
       scroll-behavior: smooth;
       overflow-y: scroll;
       overflow-x: hidden;
@@ -109,7 +109,7 @@ const Style = styled.div`
       position: sticky;
       top: 0;
       width: 100vw;
-      min-height: 100vh;
+      min-height: 100svh;
       padding: 0 15vw;
       display: flex;
       flex-direction: column;
@@ -209,14 +209,14 @@ const Style = styled.div`
 
       /* white box */
       .sub-box {
-        height: 84vh;
+        height: 84svh;
         width: 50vw;
         margin-left: 15vw;
         background-color: var(--about_project-sub-box-bg);
         opacity: 0.6;
 
         @media ${device.laptop} {
-          height: 95vh;
+          height: 95svh;
         }
       }
 
@@ -250,10 +250,10 @@ const Style = styled.div`
         position: absolute;
         z-index: 1;
         left: calc(15vw + 10%);
-        bottom: calc(30vh - 10%);
-        height: 50vh;
+        bottom: calc(30svh - 10%);
+        height: 50svh;
         width: 60vw;
-        padding: 2vh 11vw 5vh 2vw;
+        padding: 2svh 11vw 5svh 2vw;
         border: 1px solid var(--about_project-main-box-border);
         display: flex;
         flex-direction: column;
@@ -269,7 +269,7 @@ const Style = styled.div`
         @media ${device.laptop} {
           width: 40vw;
           min-height: 500px;
-          bottom: calc(20vh - 10%);
+          bottom: calc(20svh - 10%);
           padding-right: 10%;
           padding-bottom: 0;
         }
@@ -310,13 +310,13 @@ const Style = styled.div`
     .container {
       position: relative;
       width: 100vw;
-      min-height: 100vh;
+      min-height: 100svh;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
     }
     .title-wrapper {
-      height: 15vh;
+      height: 15svh;
       width: 100vw;
       padding: 0 2rem;
       position: absolute;
@@ -341,7 +341,7 @@ const Style = styled.div`
     .slide-box {
       position: relative;
       width: 100vw;
-      min-height: 100vh;
+      min-height: 100svh;
 
       scroll-behavior: smooth;
       overflow-y: scroll;
@@ -353,9 +353,9 @@ const Style = styled.div`
       top: 0;
       left: 0;
       width: 100vw;
-      min-height: 100vh;
+      min-height: 100svh;
 
-      padding-top: 10vh;
+      padding-top: 10svh;
 
       display: flex;
       flex-direction: column;
@@ -369,7 +369,7 @@ const Style = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
         padding: 0 10vw;
-        padding-top: 10vh;
+        padding-top: 10svh;
         align-content: space-evenly;
         align-items: flex-start;
         justify-items: end;
@@ -390,7 +390,7 @@ const Style = styled.div`
         &::after {
           content: '';
           width: 1px;
-          height: 30vh;
+          height: 30svh;
           border: 0.5px solid var(--about_core-fun-to-work-with);
           position: absolute;
           z-index: 3;

@@ -12,14 +12,14 @@ import resume from '../assets/images/resume-JulieChou.pdf';
 const Style = styled.div`
   main {
     position: relative;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
   }
 
   .landing-page {
     cursor: none;
     position: relative;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     color: var(--home_landing-text);
 
@@ -28,7 +28,7 @@ const Style = styled.div`
       position: absolute;
       content: '';
       width: 100%;
-      height: 100%;
+      height: 100svh;
       background-color: #22222245;
       background: radial-gradient(
         circle,
@@ -59,7 +59,7 @@ const Style = styled.div`
       letter-spacing: 0.2em;
     }
     .statement {
-      margin-top: 5vh;
+      margin-top: 5svh;
       font-size: 3vw;
       font-size: 1em;
 
@@ -97,7 +97,7 @@ const Style = styled.div`
   }
 
   .main-page {
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     position: relative;
     scroll-snap-type: y mandatory;
@@ -114,7 +114,7 @@ const Style = styled.div`
 
     .container {
       scroll-snap-align: center;
-      height: 100vh;
+      height: 100svh;
       width: 100vw;
       padding: 2rem;
       padding-top: calc(var(--header-height) + 3rem);
@@ -155,8 +155,8 @@ const Style = styled.div`
 
       @media ${device.tablet} {
         font-size: 1.2em;
-        margin-top: 5vh;
-        margin-bottom: 2vh;
+        margin-top: 5svh;
+        margin-bottom: 2svh;
       }
     }
 

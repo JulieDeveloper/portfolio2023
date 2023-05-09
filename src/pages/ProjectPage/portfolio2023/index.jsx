@@ -20,7 +20,7 @@ import { useImmer } from 'use-immer';
 const Style = styled.div`
   scroll-snap-type: y mandatory;
   /* reset style */
-  height: 100vh;
+  height: 100svh;
   background-color: var(--01-landing_primary-bg);
   color: var(--01-primary-text);
   p {
@@ -37,7 +37,7 @@ const Style = styled.div`
     z-index: 800;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     background-color: var(--white);
     animation: ${keyframes`
@@ -52,7 +52,7 @@ const Style = styled.div`
     animation-fill-mode: forwards;
   } */
   .scroll-snap-container {
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
 
     scroll-snap-type: y mandatory;
@@ -60,7 +60,7 @@ const Style = styled.div`
   }
 
   .scroll-snap-item {
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     padding: 0 5vw;
     scroll-snap-align: center;
@@ -69,7 +69,7 @@ const Style = styled.div`
     justify-content: center;
   }
   .scroll-snap-item.title-landing {
-    padding-top: 20vh;
+    padding-top: 20svh;
 
     .wrapper {
       position: relative;
@@ -134,7 +134,7 @@ const Style = styled.div`
   /* animation*/
   .line-animation-section {
     @media ${device.tablet} {
-      height: 100vh;
+      height: 100svh;
       position: relative;
     }
   }
@@ -429,7 +429,7 @@ const Style = styled.div`
 
     left: -5vw;
     width: 100vw;
-    height: 70vh;
+    height: 70svh;
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: var(--01-feature-detail-section-bg);
@@ -444,7 +444,7 @@ const Style = styled.div`
       position: sticky;
       top: 0;
       width: 100vw;
-      height: 70vh;
+      height: 70svh;
 
       display: flex;
       justify-content: center;
@@ -520,7 +520,7 @@ const Style = styled.div`
   }
   .darkmode-container .text0 {
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 5svh;
 
     max-width: 40%;
     text-align: center;
@@ -641,14 +641,14 @@ const Style = styled.div`
       img {
         width: 100%;
         height: 100%;
-        max-height: 55vh;
+        max-height: 55svh;
         object-fit: contain;
 
         @media ${device.tablet} {
-          max-height: 80vh;
+          max-height: 80svh;
         }
         @media ${device.laptop} {
-          max-height: 65vh;
+          max-height: 65svh;
         }
       }
     }
@@ -677,7 +677,7 @@ const Style = styled.div`
       text-align: center;
     }
     .text0 {
-      margin-top: 5vh;
+      margin-top: 5svh;
       white-space: pre;
     }
     .control-panel,
@@ -768,7 +768,7 @@ const Style = styled.div`
 
   .design-intro-wrapper {
     width: 100%;
-    min-height: 50vh;
+    min-height: 50svh;
 
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -1367,7 +1367,7 @@ const Portfolio2023 = () => {
                   value: 'home',
                 })}
               >
-                {t('rwd.navHome')}
+                {t('rwd.nasvHome')}
               </div>
               <div
                 className={clsx(

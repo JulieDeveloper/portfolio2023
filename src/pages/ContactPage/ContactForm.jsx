@@ -121,7 +121,7 @@ const StyledForm = styled.form`
     font-size: 1.2em;
     line-height: 2em;
     @media ${device.tablet} {
-      margin-top: 10vh;
+      margin-top: 10svh;
     }
   }
 `;
@@ -131,7 +131,7 @@ const Button = styled.button`
   height: 30px;
   width: fit-content;
   align-self: flex-end;
-  margin-top: 2vh;
+  margin-top: 2svh;
   padding: 0 1rem;
   color: var(--form_btn-send-text);
   background-color: var(--form_btn-send-bg);
@@ -147,7 +147,7 @@ const Button = styled.button`
   }
 
   &.btn-reset {
-    margin-top: 10vh;
+    margin-top: 10svh;
     color: var(--form_btn-reset-text);
     border: 1px solid var(--form_btn-reset-border);
     background-color: transparent;

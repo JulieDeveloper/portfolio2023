@@ -44,7 +44,7 @@ html,
 body {
   position: relative;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 100svh;
   font-family: 'Mori', 'PPMonumentExtended', 'Monument Grotesk', 'Rubik',
     sans-serif;
 
