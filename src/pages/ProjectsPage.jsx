@@ -481,7 +481,7 @@ const Project = ({
       )}
       onClick={(e) => handleClick(e)}
     >
-      <div className="num">{number}</div>
+      <div className="num EN">{number}</div>
 
       <h3 className="name">{name}</h3>
       <div className="info-row">
@@ -494,7 +494,6 @@ const Project = ({
           onClick={handleCollapseBtnClick}
         ></div>
       </div>
-
       {detail}
     </StyledProject>
   );
