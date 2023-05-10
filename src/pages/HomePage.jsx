@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { device } from '../styles/device';
+
 import Header from 'components/background/Header';
 import Copyright from 'components/background/Copyright';
 import Navbar from 'components/background/Navbar.jsx';
@@ -257,21 +258,15 @@ const Homepage = () => {
   };
   const LandingPage = () => {
     const handlePointerMove = (e) => {
-      // Check if touch event
-      if (e.touches && e.touches.length > 0) {
-        // If touch event, get coordinates from first touch point
-        setPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
-      } else {
-        // If mouse event, get coordinates from mouse pointer
-        setPosition({ x: e.clientX, y: e.clientY });
-      }
+      // If mouse event, get coordinates from mouse pointer
+      setPosition({ x: e.clientX, y: e.clientY });
     };
 
     return (
       <section
         onClick={handleEntryClick}
         onMouseMove={handlePointerMove}
-        onTouchMove={handlePointerMove}
+        onTouchMove={handleEntryClick}
         className="landing-page"
         style={{
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, var(--home_landing-cursor-inline), var(--home_landing-cursor-outline)) `,
