@@ -242,7 +242,7 @@ const Homepage = () => {
               <p className="what-i-do">{t('homePage.whatIDo')}</p>
 
               <div className="links-container">
-                <a href={resume} download>
+                <a href={resume} download="resume-JulieChou.pdf">
                   <div className="link-text">
                     {t('background.links.resume')}
                   </div>
