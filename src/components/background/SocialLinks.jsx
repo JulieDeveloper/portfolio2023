@@ -52,7 +52,7 @@ const SocialLinksJSX = () => {
       <a href="https://github.com/JulieDeveloper" className="EN">
         {isHomePage ? 'GITHUB' : <GithubIcon />}
       </a>
-      <a href="https://github.com/JulieDeveloper" className="EN">
+      <a href="https://www.linkedin.com/in/julie-yuan-chou/" className="EN">
         {isHomePage ? 'LINKEDIN' : <LinkedInIcon />}
       </a>
     </>
