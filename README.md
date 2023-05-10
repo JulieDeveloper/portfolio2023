@@ -1,6 +1,6 @@
 # Julie Chou's Portfolio Website
 
-[www.juliechou.com](www.juliechou.com)
+[https://juliechou.com/](https://juliechou.com/)
 
 This project is my personal website that showcases my skills and projects as a web frontend developer. The website is a static website built using **React.js**.
 
@@ -54,14 +54,13 @@ To run this project, follow these steps:
 1. Clone the repository: `git clone https://github.com/JulieDeveloper/portfolio2023.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
-
-You can view the website at http://localhost:3000.
+4. View the website at http://localhost:3000.
 
 ---
 
 ### Deployment:
 
-The website is deployed through **Vercel** and has its own domain [www.juliechou.com](www.juliechou.com)
+The website is deployed through **Vercel** and has its own domain [https://juliechou.com](https://juliechou.com/)
 
 ---
 
