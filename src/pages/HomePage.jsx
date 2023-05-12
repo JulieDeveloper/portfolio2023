@@ -266,7 +266,7 @@ const Homepage = () => {
       <section
         onClick={handleEntryClick}
         onMouseMove={handlePointerMove}
-        onTouchMove={handleEntryClick}
+        onTouchStart={handleEntryClick}
         className="landing-page"
         style={{
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, var(--home_landing-cursor-inline), var(--home_landing-cursor-outline)) `,
